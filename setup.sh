@@ -304,7 +304,7 @@ install_zsh () {
 # Package managers & packages
 
 # . "$DOTFILES_DIR/install/brew.sh"
-# . "$DOTFILES_DIR/install/npm.sh"
+ . "$DOTFILES_DIR/install/npm.sh"
 
 # if [ "$(uname)" == "Darwin" ]; then
     # . "$DOTFILES_DIR/install/brew-cask.sh"
