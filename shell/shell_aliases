@@ -134,6 +134,7 @@ alias gpu='git pull origin HEAD --prune'
 alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog' # allows you to see every step you have made with git allowing you to retract and reinstate your steps
+alias ga='git add'
 alias gap='git add -p' # step through each change, or hunk
 alias gsl='git shortlog -sn' # quickly get a list of contributors and see how many commits each person has
 alias gws='git diff --shortstat "@{0 day ago}"' # how many lines of code you have written today
