@@ -256,3 +256,9 @@
         prune = true
 [init]
 	templatedir = ~/.git_template
+[gui]
+	recentrepo = /Users/travis/Sites/groups/wp-content/plugins/wc-group-memberships
+[github]
+	user = tnorthcutt
+[ghi]
+	token = !security find-internet-password -a tnorthcutt -s github.com -l 'ghi token' -w

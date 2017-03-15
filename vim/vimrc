@@ -1,0 +1,62 @@
+set nocompatible
+filetype on
+filetype off
+
+" Show current mode at the bottom
+set showmode
+
+" Show a line under the line the cursor is on
+set cursorline
+
+" Statusline settings
+set laststatus=2 " Enable statusline
+
+set statusline=
+" set statusline=%{fugitive#statusline()} " Add git status from vim-fugitive plugin
+set statusline=%t		"tail of the filename
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+syntax on
+
+" Show line numbers
+set number
+
+" Show relative line numbers
+set relativenumber
+
+" No swap files or backup files!
+set nobackup
+set noswapfile
+
+" Search settings
+set ignorecase " ignore case when searching
+set	smartcase " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set incsearch
+set showmatch
+set hlsearch
+
+set history=1000
+set undolevels=1000
+set title
+set visualbell
+set noerrorbells
+
+" Mappings
+
+" Change the mapleader from \ to ,
+let mapleader=","
+
+" Unhighlight search results
+nnoremap <leader><space> :noh<cr>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Show a colored column
+set colorcolumn=85
+
+set mouse=a

@@ -71,7 +71,7 @@ export CLICOLOR_FORCE=1
 alias l="ls -lF ${colorflag}"
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-alias ls='ls -AFh ${colorflag} --group-directories-first'
+# alias ls='ls -AFh ${colorflag} --group-directories-first'
 
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
@@ -210,3 +210,9 @@ done
 
 # PHP Fun
 alias artisan='php artisan'
+
+# Alias wp to require psyshell for syntx hightlighting
+alias wp="wp --require=/Users/travis/.composer/vendor/bin/psysh"
+
+# application aliases
+alias imageoptim='open -a ImageOptim'
