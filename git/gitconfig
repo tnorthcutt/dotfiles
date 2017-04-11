@@ -258,6 +258,7 @@
 	templatedir = ~/.git_template
 [gui]
 	recentrepo = /Users/travis/Sites/groups/wp-content/plugins/wc-group-memberships
+	recentrepo = /Users/travis/Sites/chi
 [github]
 	user = tnorthcutt
 [ghi]

@@ -4,6 +4,9 @@ export ZSH=$HOME/.oh-my-zsh
 GOPATH="$HOME/go"
 export GOPATH
 
+#COMPOSER_HOME="/composer"
+#export COMPOSER_HOME
+
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
@@ -130,3 +133,6 @@ bindkey '^s' pet-select
 
 # Load rbenv
 eval "$(rbenv init -)"
+
+# load zmv shell cmd
+autoload zmv
