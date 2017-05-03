@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+LOCATION="$(current-location)"
+
+#echo $LOCATION | ssh personal "cat > misc.travisnorthcutt.com/location.txt"
+
+
