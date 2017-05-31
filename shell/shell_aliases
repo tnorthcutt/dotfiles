@@ -213,3 +213,6 @@ alias wp="wp --require=/Users/travis/.composer/vendor/bin/psysh"
 
 # application aliases
 alias imageoptim='open -a ImageOptim'
+
+# Codeception alias
+alias codecept='php vendor/bin/codecept'

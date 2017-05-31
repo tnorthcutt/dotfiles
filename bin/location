@@ -2,6 +2,6 @@
 
 LOCATION="$(current-location)"
 
-#echo $LOCATION | ssh personal "cat > misc.travisnorthcutt.com/location.txt"
+echo $LOCATION | ssh personal "cat > misc.travisnorthcutt.com/location.txt"
 
 
