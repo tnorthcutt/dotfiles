@@ -1,3 +1,5 @@
+# Run `brew bundle -v --file=~/Brewfile1`
+
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'\
@@ -25,6 +27,8 @@ cask 'gitup'
 cask 'duet'
 cask 'qlmarkdown'
 cask 'keepingyouawake'
+cask 'insomnia'
+cask 'vanilla'
 
 brew 'mas'
 brew 'zsh'
@@ -51,6 +55,10 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'lame'
 brew 'figlet'
+brew 'imagesnap'
+brew 'sl'
+brew 'the_silver_searcher'
+
 
 mas '2do', id: 477670270
 mas 'Annotate', id: 918207447
@@ -58,3 +66,4 @@ mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
 mas '1Password', id: 443987910
 mas 'Shush - Microphone Manager', id: 496437906 
 mas 'Harvest', id: 506189836
+
