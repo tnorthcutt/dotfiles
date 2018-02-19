@@ -10,6 +10,7 @@ export GOPATH
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
+  "/usr/local/bin"
   "/usr/bin"
   "/usr/local/sbin"
   "/usr/local/git/bin"
@@ -24,12 +25,12 @@ dirs_to_prepend=(
   "$(brew --prefix ruby)/bin"
   "$(brew --prefix coreutils)/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
-  "$(brew --prefix homebrew/php/php70)/bin" # use homebrew php on cli
+  "$(brew --prefix homebrew/php/php71)/bin" # use homebrew php on cli
   "$GOPATH/bin"
 )
 
 # Explicitly configured $PATH
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/bin:/usr/sbin:/sbin"
 
 for dir in ${(k)dirs_to_prepend[@]}
 do
@@ -79,7 +80,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric brew brew-cask catimg node npm history git git-flow ssh-agent vagrant vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open)
+plugins=(fabric brew brew-cask catimg node npm history git git-flow ssh-agent vagrant vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr)
 
 # User configuration
 
@@ -136,3 +137,4 @@ eval "$(rbenv init -)"
 
 # load zmv shell cmd
 autoload zmv
+export PATH="/usr/local/bin:$PATH"
