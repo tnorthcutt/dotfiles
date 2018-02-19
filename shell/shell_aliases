@@ -216,3 +216,12 @@ alias imageoptim='open -a ImageOptim'
 
 # Codeception alias
 alias codecept='php vendor/bin/codecept'
+
+# wp cli plugin install alias
+alias plugin='wp plugin install --activate'
+
+# WP Licenses output
+alias licenses='cat ~/Dropbox/Member\ Up/WordPress/plugins/licenses.txt'
+
+# https://gist.github.com/thebouv/8657674
+alias ducks='du -cks * | sort -rn | head -11'

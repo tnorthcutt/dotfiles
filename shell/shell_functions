@@ -161,3 +161,12 @@ shellswitch () {
 
 # http://stuff-things.net/2017/02/01/better-whois/
 function whois() { /usr/bin/whois -h geektools.com ${@##http?(s)://}; }
+
+function snapimage(){
+  cd /tmp
+  /usr/sbin/screencapture -x screensnap.png
+  imagesnap -w 2 camerasnap.png
+  filename=$(date +%Y-%m-%d___%H.%M.%S.png)
+  /usr/local/bin/convert +append camerasnap.png screensnap.png $filename
+  mv $filename ~/snaps/$filename
+}
