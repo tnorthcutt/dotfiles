@@ -28,7 +28,7 @@ alias -- -="cd -"
 
 # mv, rm, cp, gunzip
 alias mv='mv -v'
-alias rm='rm -i -v'
+alias rm='rm -v'
 alias cp='cp -v'
 alias ungz="gunzip -k"
 
@@ -122,6 +122,7 @@ alias glt='git log --all --graph --decorate --oneline --simplify-by-decoration' 
 alias glsw='git log -S' # search the commit history for the word puppy and display matching commits (glsw [word])
 alias gst='git status'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gcmsg='git commit -m'
 alias gam='git commit -am'
 alias gb='git branch'
@@ -225,3 +226,9 @@ alias licenses='cat ~/Dropbox/Member\ Up/WordPress/plugins/licenses.txt'
 
 # https://gist.github.com/thebouv/8657674
 alias ducks='du -cks * | sort -rn | head -11'
+
+# screenshot, OCR, and copy text
+alias ocr='screencapture -i ~/tmp/screenshot.png && tesseract ~/tmp/screenshot.png stdout | pbcopy && rm -f ~/tmp/screenshot.png'
+
+# sync gifs
+alias gifsync='rsync -u --verbose ~/gifs/* personal:gifs.travisnorthcutt.com'

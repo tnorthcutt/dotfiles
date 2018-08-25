@@ -25,7 +25,8 @@ dirs_to_prepend=(
   "$(brew --prefix ruby)/bin"
   "$(brew --prefix coreutils)/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
-  "$(brew --prefix homebrew/php/php71)/bin" # use homebrew php on cli
+  "/usr/local/opt/php@7.1/bin"
+  "/usr/local/opt/php@7.1/sbin"
   "$GOPATH/bin"
 )
 
@@ -80,7 +81,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric brew brew-cask catimg node npm history git git-flow ssh-agent vagrant vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr)
+plugins=(fabric brew brew-cask catimg node npm history git git-flow ssh-agent vagrant vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr z autojump)
 
 # User configuration
 
@@ -138,3 +139,4 @@ eval "$(rbenv init -)"
 # load zmv shell cmd
 autoload zmv
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"

@@ -1,4 +1,4 @@
-# Run `brew bundle -v --file=~/Brewfile1`
+# Run `brew bundle -v --file=~/Brewfile`
 
 cask_args appdir: '/Applications'
 
@@ -29,6 +29,8 @@ cask 'qlmarkdown'
 cask 'keepingyouawake'
 cask 'insomnia'
 cask 'vanilla'
+cask 'db-browser-for-sqlite'
+cask 'amethyst'
 
 brew 'mas'
 brew 'zsh'
@@ -38,7 +40,6 @@ brew 'homebrew/php/composer'
 brew 'npm'
 brew 'node'
 brew 'ack'
-brew 'mariadb'
 brew 'nginx'
 brew 'imagemagick'
 brew 'ffmpeg'
@@ -58,12 +59,13 @@ brew 'figlet'
 brew 'imagesnap'
 brew 'sl'
 brew 'the_silver_searcher'
+brew 'autojump'
+brew 'yarn'
+brew 'cputhrottle'
+brew 'exa'
 
 
-mas '2do', id: 477670270
-mas 'Annotate', id: 918207447
 mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
 mas '1Password', id: 443987910
 mas 'Shush - Microphone Manager', id: 496437906 
 mas 'Harvest', id: 506189836
-

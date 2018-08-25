@@ -263,3 +263,6 @@
 	user = tnorthcutt
 [ghi]
 	token = !security find-internet-password -a tnorthcutt -s github.com -l 'ghi token' -w
+[user]
+	name = Travis Northcutt
+	email = travis@travisnorthcutt.com
