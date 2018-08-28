@@ -22,8 +22,8 @@ dirs_to_prepend=(
   "$HOME/bin"
   "$HOME/.rvm/bin"
   "$HOME/.yarn/bin"
-  "$(brew --prefix ruby)/bin"
-  "$(brew --prefix coreutils)/libexec/gnubin" # Add brew-installed GNU core utilities bin
+  "/usr/loca/opt/ruby/bin"
+  "/usr/local/opt/coreutils/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
   "/usr/local/opt/php@7.1/bin"
   "/usr/local/opt/php@7.1/sbin"
@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=/usr/bin/vim
 
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 # Turn off autocorrection
 unsetopt correct_all
