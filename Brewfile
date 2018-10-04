@@ -2,7 +2,7 @@
 
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'\
+tap 'caskroom/cask'
 
 cask 'google-chrome'
 cask 'phpstorm'
@@ -30,13 +30,11 @@ cask 'keepingyouawake'
 cask 'insomnia'
 cask 'vanilla'
 cask 'db-browser-for-sqlite'
-cask 'amethyst'
 
 brew 'mas'
 brew 'zsh'
 brew 'git'
 brew 'openssl'
-brew 'homebrew/php/composer'
 brew 'npm'
 brew 'node'
 brew 'ack'
@@ -49,7 +47,6 @@ brew 'mpv'
 brew 'ghi'
 brew 'nmap'
 brew 'phpunit'
-brew 'phpbrew'
 brew 'gpg'
 brew 'whois'
 brew 'rbenv'
@@ -63,6 +60,10 @@ brew 'autojump'
 brew 'yarn'
 brew 'cputhrottle'
 brew 'exa'
+brew 'bat'
+brew 'prettyping'
+brew 'fzf'
+brew 'fd'
 
 
 mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
