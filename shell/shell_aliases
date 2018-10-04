@@ -235,3 +235,8 @@ alias gifsync='rsync -u --verbose ~/gifs/* personal:gifs.travisnorthcutt.com'
 
 # nvm alias as per https://twitter.com/strandafili/status/1034463792623759360
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+
+# alias cat to bat because bat is more better
+alias cat='bat'
+
+alias whatcomposer='curl composerversioncheatsheet.com/json.html'
