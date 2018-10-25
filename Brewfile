@@ -5,13 +5,9 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 
 cask 'google-chrome'
-cask 'phpstorm'
 cask 'iterm2'
 cask 'slack'
 cask 'sequel-pro'
-cask 'spectacle'
-cask 'atom'
-cask 'backblaze'
 cask 'flux'
 cask 'alfred'
 cask 'atext'
@@ -24,12 +20,11 @@ cask 'caprine'
 cask 'firefox'
 cask 'tomighty'
 cask 'gitup'
-cask 'duet'
 cask 'qlmarkdown'
 cask 'keepingyouawake'
 cask 'insomnia'
-cask 'vanilla'
 cask 'db-browser-for-sqlite'
+cask 'mosaic'
 
 brew 'mas'
 brew 'zsh'
@@ -67,6 +62,10 @@ brew 'fd'
 
 
 mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
-mas '1Password', id: 443987910
+mas '1Password 7 - Password Manager', id: 1333542190
 mas 'Shush - Microphone Manager', id: 496437906 
 mas 'Harvest', id: 506189836
+mas 'Bear', id: 1091189122
+mas 'iA Writer', id: 775737590
+mas 'Todoist', id: 585829637
+mas 'Shush - Microphone Manager', id: 496437906
