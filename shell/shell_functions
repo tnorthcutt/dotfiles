@@ -170,3 +170,21 @@ function snapimage(){
   /usr/local/bin/convert +append camerasnap.png screensnap.png $filename
   mv $filename ~/snaps/$filename
 }
+
+function blog() {
+  cd /Users/travis/Sites/memberscore/source/_articles
+  cat << EOF > $1.blade.md
+---
+extends: _layouts.article
+title: write a title here!
+date: 2018-10-15
+author: pick an author: travis | amanda
+section: body
+excerpt: write an excerpt here!
+---
+
+Create your beautiful blog post here
+EOF
+  macdown $1.blade.md
+  cd /Users/travis/Sites/memberscore
+}

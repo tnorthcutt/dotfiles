@@ -60,3 +60,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 set colorcolumn=85
 
 set mouse=a
+
+" Make backspace work as expected
+" https://vi.stackexchange.com/a/2163
+set backspace=indent,eol,start
+set ruler

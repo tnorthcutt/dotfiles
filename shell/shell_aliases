@@ -210,7 +210,8 @@ done
 alias artisan='php artisan'
 
 # Alias wp to require psyshell for syntx hightlighting
-alias wp="wp --require=/Users/travis/.composer/vendor/bin/psysh"
+ alias wp="wp --require=/Users/travis/.composer/vendor/bin/psysh"
+ alias wpd="export WP_CLI_PHP_ARGS=-dxdebug.profiler_enable=1; $HOME/bin/wp"
 
 # application aliases
 alias imageoptim='open -a ImageOptim'
@@ -231,7 +232,7 @@ alias ducks='du -cks * | sort -rn | head -11'
 alias ocr='screencapture -i ~/tmp/screenshot.png && tesseract ~/tmp/screenshot.png stdout | pbcopy && rm -f ~/tmp/screenshot.png'
 
 # sync gifs
-alias gifsync='rsync -u --verbose ~/gifs/* personal:gifs.travisnorthcutt.com'
+alias gifsync='rsync -u --verbose ~/gifs/* personal:gifs.travisnorthcutt.com && cd ~/gifs  && git add . && git commit -m "add new gifs" && git push origin master && cd -'
 
 # nvm alias as per https://twitter.com/strandafili/status/1034463792623759360
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
@@ -240,3 +241,6 @@ alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NV
 alias cat='bat'
 
 alias whatcomposer='curl composerversioncheatsheet.com/json.html'
+
+# Random aliases to open finder to a specific folder
+alias podcast='open /Users/travis/Dropbox/Member\ Up/MemberScore/Podcast'
