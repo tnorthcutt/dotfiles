@@ -7,6 +7,9 @@ export GOPATH
 #COMPOSER_HOME="/composer"
 #export COMPOSER_HOME
 
+# PHP Brew https://github.com/phpbrew/phpbrew
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
@@ -20,14 +23,13 @@ dirs_to_prepend=(
   "$HOME/dotfiles/bin"
   "$HOME/.composer/vendor/bin"
   "$HOME/bin"
+  "$HOME/bin/wp-plugin-build"
   "$HOME/bin/spark-installer"
   "$HOME/.rvm/bin"
   "$HOME/.yarn/bin"
   "/usr/loca/opt/ruby/bin"
   "/usr/local/opt/coreutils/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
-  "/usr/local/opt/php@7.1/bin"
-  "/usr/local/opt/php@7.1/sbin"
   "$GOPATH/bin"
 )
 
