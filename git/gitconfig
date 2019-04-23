@@ -148,6 +148,8 @@
       git tag -d "$1" &> /dev/null; \
       git tag $1; \
   }; f"
+	forget = update-index --skip-worktree
+	remember = update-index --no-skip-worktree
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -179,7 +181,7 @@
 
 # Git mergetool
 [merge]
-        tool = opendiff
+	tool = opendiff
 
 [core]
         editor = vim
@@ -251,6 +253,7 @@
         clean = git lfs clean %f
         smudge = git lfs smudge %f
         required = true
+	process = git-lfs filter-process
 
 [fetch]
         prune = true
