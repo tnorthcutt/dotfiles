@@ -200,3 +200,8 @@ ports() {
         echo "Usage: listening [pattern]"
     fi
 }
+
+# Get md5 hash of string and copy to clipboard
+function md5hash() {
+  echo -n "$@" | md5sum | pbcopy
+}
