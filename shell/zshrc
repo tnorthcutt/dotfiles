@@ -19,15 +19,13 @@ dirs_to_prepend=(
   "/usr/local/git/bin"
   "/usr/local"
   "/usr/local/mysql/bin"
+  "/usr/local/Cellar/mysql@5.7/5.7.25/bin/"
   "/sw/bin/"
   "$HOME/dotfiles/bin"
   "$HOME/.composer/vendor/bin"
   "$HOME/bin"
-  "$HOME/bin/wp-plugin-build"
   "$HOME/bin/spark-installer"
-  "$HOME/.rvm/bin"
   "$HOME/.yarn/bin"
-  "/usr/loca/opt/ruby/bin"
   "/usr/local/opt/coreutils/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
   "$GOPATH/bin"
