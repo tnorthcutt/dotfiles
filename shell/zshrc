@@ -27,7 +27,6 @@ dirs_to_prepend=(
   "$HOME/bin/spark-installer"
   "$HOME/.yarn/bin"
   "/usr/local/opt/coreutils/libexec/gnubin" # Add brew-installed GNU core utilities bin
-  "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
   "$GOPATH/bin"
 )
 
@@ -65,7 +64,7 @@ ZSH_THEME="nick"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -82,7 +81,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric brew brew-cask catimg node npm history git git-flow ssh-agent vagrant vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr z autojump)
+plugins=(fabric brew brew-cask catimg node npm history git-flow ssh-agent vagrant vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr z autojump)
 
 # User configuration
 
@@ -108,9 +107,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Source local extra (private) settings specific to machine if it exists
 [ -f ~/.zsh.local ] && source ~/.zsh.local
-
-# npm tab completion
-. <(npm completion)
 
 export EDITOR=/usr/bin/vim
 
@@ -141,3 +137,18 @@ eval "$(rbenv init -)"
 autoload zmv
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+
+# Set cdpath; from https://twitter.com/paulredmond/status/1204557648026144768
+cdpath=(~/sites ~/homestead-sites/segmetrics)
+
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# https://github.com/ohmyzsh/ohmyzsh/issues/2283#issuecomment-45452691
+ unalias mysql
+
+# nostromo [section begin]
+eval "$(nostromo completion)"
+# nostromo [section end]

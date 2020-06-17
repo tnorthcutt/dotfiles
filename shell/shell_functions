@@ -171,24 +171,6 @@ function snapimage(){
   mv $filename ~/snaps/$filename
 }
 
-function blog() {
-  cd /Users/travis/Sites/memberscore/source/_articles
-  cat << EOF > $1.blade.md
----
-extends: _layouts.article
-title: write a title here!
-date: 2018-10-15
-author: pick an author: travis | amanda
-section: body
-excerpt: write an excerpt here!
----
-
-Create your beautiful blog post here
-EOF
-  macdown $1.blade.md
-  cd /Users/travis/Sites/memberscore
-}
-
 # What is listening on which ports?
 # From https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x
 ports() {
@@ -204,4 +186,65 @@ ports() {
 # Get md5 hash of string and copy to clipboard
 function md5hash() {
   echo -n "$@" | md5sum | pbcopy
+}
+
+# Git fuzzy find goodness
+# From https://www.techspeaking.io/2019/01/14/improve-your-git-flow-with-fuzzy-find.html
+gco(){
+  if [ $# -eq 0 ]; then
+    gfuz git checkout
+  else
+    git checkout "$@"
+  fi
+}
+
+ga(){
+  if [ $# -eq 0 ]; then
+    gfuz git add
+  else
+    git add "$@"
+  fi
+}
+
+grh(){
+  if [ $# -eq 0 ]; then
+    git diff --name-only --cached | fzf --print0 -m -1 | xargs -0 -t -o git reset HEAD
+  else
+    git reset HEAD "$@"
+  fi
+}
+
+gb(){
+  if [ $# -eq 0 ]; then
+    git branch | fzf --print0 -m | tr -d '[:space:]*' |xargs -0 -t -o git checkout
+  else
+    git checkout "$@"
+  fi
+}
+
+# https://laravel.com/docs/5.8/homestead#accessing-homestead-globally
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
+
+# Docker reference
+function dockerhelp() {
+  cat << EOF
+Reminder: 'dc' is aliased to 'docker-compose'
+
+Start: docker-compose up
+Stop: docker-compose stop
+
+Open PHP shell in current project: docker-shell
+
+Inspect: docker inspect CONTAINER_NAME
+e.g. 'docker inspect mariadb'
+or
+'docker inspect mariadb | grep IPAddress'
+EOF
+}
+
+function docker-shell() {
+  NAME=`awk '/php/{flag=1} flag && /name:/{print $NF;flag=""}' docker-compose.yaml`
+  docker exec -it "$NAME" /bin/bash
 }

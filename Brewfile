@@ -2,8 +2,6 @@
 
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
-
 cask 'google-chrome'
 cask 'iterm2'
 cask 'slack'
@@ -25,6 +23,8 @@ cask 'keepingyouawake'
 cask 'insomnia'
 cask 'db-browser-for-sqlite'
 cask 'mosaic'
+cask 'logitech-camera-settings'
+cask 'install font-hack-nerd-font'
 
 brew 'mas'
 brew 'zsh'
@@ -59,7 +59,12 @@ brew 'bat'
 brew 'prettyping'
 brew 'fzf'
 brew 'fd'
-
+brew 'github/gh/gh'
+brew 'lsd'
+brew 'diff-so-fancy'
+brew 'jq'
+brew 'tree'
+brew 'pv'
 
 mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
 mas '1Password 7 - Password Manager', id: 1333542190

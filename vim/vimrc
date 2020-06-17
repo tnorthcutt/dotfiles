@@ -57,7 +57,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Show a colored column
-set colorcolumn=85
+" set colorcolumn=85
 
 set mouse=a
 

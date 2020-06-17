@@ -12,7 +12,6 @@ alias oo="open ."
 alias e="$EDITOR"
 alias g="git"
 alias v="vim"
-alias gh="github"
 alias rm="trash"
 alias x+="chmod +x"
 alias -- +x="chmod +x"
@@ -67,17 +66,21 @@ fi
 
 export CLICOLOR_FORCE=1
 
+# lsd https://github.com/Peltoche/lsd
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-# alias ls='ls -AFh ${colorflag} --group-directories-first'
+# # alias ls='ls -AFh ${colorflag} --group-directories-first'
 
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
-
-# List only directories
-alias lsd='gls -l | grep "^d"'
 
 # `cat` with beautiful colors. requires Pygments installed.
 # sudo easy_install -U Pygments
@@ -98,17 +101,6 @@ alias flushdns="dscacheutil -flushcache"
 # GIT STUFF
 #
 
-# List git branches on the local machine sorted by recent updates, adding a star to remote tracking branches
-function git_list_branches() {
-  RED="\e[91m";
-  for branch in $(git branch | sed s/^..//); do
-    time_ago=$(git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $branch --);
-    # Add a red star to mark branches that are tracking something upstream
-    tracks_upstream=$(if [ "$(git rev-parse $branch@{upstream} 2>/dev/null)" ]; then printf "$RED★"; fi);
-    printf "%-53s - %s %s\n" $time_ago $branch $tracks_upstream;
-  done | sort;
-}
-
 # Git aliases
 # More Git tips http://firstaidgit.io/
 alias gss="git status -s"
@@ -117,6 +109,9 @@ alias gpt="git push origin HEAD && git push --tags"
 alias wip="git commit -m'WIP' . && git push origin HEAD"
 alias grok="ngrok start rem.jsbin-dev.com static.rem.jsbin-dev.com learn.rem.jsbin-dev.com"
 alias gl='git log'
+alias glg='git log --stat'
+alias glgp='git log --stat -p'
+alias glog='git log --oneline --decorate --graph'
 alias glp5='git log -5 --pretty --oneline' # view your last 5 latest commits each on their own line
 alias glt='git log --all --graph --decorate --oneline --simplify-by-decoration' # pretty branch status
 alias glsw='git log -S' # search the commit history for the word puppy and display matching commits (glsw [word])
@@ -125,27 +120,28 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gcmsg='git commit -m'
 alias gam='git commit -am'
-alias gb='git branch'
-alias gc='git commit'
-alias gco='git checkout'
+alias gc='git commit -v'
+alias gca='git commit -v --amend'
+alias gca!='git commit -v --no-edit --amend'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gbt=git_list_branches
+alias gp='git push'
 alias gpu='git pull origin HEAD --prune'
 alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog' # allows you to see every step you have made with git allowing you to retract and reinstate your steps
-alias ga='git add'
 alias gap='git add -p' # step through each change, or hunk
 alias gsl='git shortlog -sn' # quickly get a list of contributors and see how many commits each person has
 alias gws='git diff --shortstat "@{0 day ago}"' # how many lines of code you have written today
 alias gwts='git ls-files | xargs wc -l' # count number of lines of code in a git project
 alias ggmp='git checkout -' # jump back to to your last branch
 alias gstash='git stash' # stash git changes and put them into your list
-alias gdtp='git stash pop' # bring back your changes, but it removes them from your stash
+alias gpop='git stash pop' # bring back your changes, but it removes them from your stash
 alias gchp='git cherry-pick' # cherry pick the committed code in your own branch (gchp [hash])
 alias gcln='git clean -xfd' # remove untracked files
-alias gup='git pull --rebase=preserve'
+alias gup='git pull --rebase=merges'
+alias gbd='git branch -D'
 
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
@@ -156,6 +152,23 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 # Gist
 alias gist-paste="gist --private --copy --paste --filename"  # gist-paste filename.ext -- create private Gist from the clipboard contents
 alias gist-file="gist --private --copy"  # gist-file filename.ext -- create private Gist from a file
+
+# Git fuzzy find goodness
+# from https://www.techspeaking.io/2019/01/14/improve-your-git-flow-with-fuzzy-find.html
+alias gfuz='git ls-files -m -o --exclude-standard | fzf --print0 -m -1 | xargs -0 -t -o'
+alias gdf='gfuz git diff'
+
+# List git branches on the local machine sorted by recent updates, adding a star to remote tracking branches
+function git_list_branches() {
+  RED="\e[91m";
+  for branch in $(git branch | sed 's/^..//'); do
+  # for branch in $(git branch | sed s/*//); do
+    time_ago=$(git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $branch --);
+    # Add a red star to mark branches that are tracking something upstream
+    tracks_upstream=$(if [ "$(git rev-parse $branch@{upstream} 2>/dev/null)" ]; then printf "$RED★"; fi);
+    printf "%-53s - %s %s\n" $time_ago $branch $tracks_upstream;
+  done | sort;
+}
 
 # Networking. IP address, dig, DNS
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -206,11 +219,11 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
 done
 
-# PHP Fun
+# speed up artisan commands
 alias artisan='php artisan'
+alias art='php artisan'
 
 # Alias wp to require psyshell for syntx hightlighting
- alias wp="wp --require=/Users/travis/.composer/vendor/bin/psysh"
  alias wpd="export WP_CLI_PHP_ARGS=-dxdebug.profiler_enable=1; $HOME/bin/wp"
 
 # application aliases
@@ -218,6 +231,9 @@ alias imageoptim='open -a ImageOptim'
 
 # Codeception alias
 alias codecept='php vendor/bin/codecept'
+
+# Use project phpunit
+alias phpunit='./vendor/bin/phpunit'
 
 # wp cli plugin install alias
 alias plugin='wp plugin install --activate'
@@ -232,7 +248,7 @@ alias ducks='du -cks * | sort -rn | head -11'
 alias ocr='screencapture -i ~/tmp/screenshot.png && tesseract ~/tmp/screenshot.png stdout | pbcopy && rm -f ~/tmp/screenshot.png'
 
 # sync gifs
-alias gifsync='rsync -u --verbose ~/gifs/* personal:gifs.travisnorthcutt.com && cd ~/gifs  && git add . && git commit -m "add new gifs" && git push origin master && cd -'
+alias gifsync='rsync -u --verbose -r --delete ~/gifs/* personal:gifs.travisnorthcutt.com && cd ~/gifs  && git add . && git commit -m "add new gifs" && git push origin master && cd -'
 
 # nvm alias as per https://twitter.com/strandafili/status/1034463792623759360
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
@@ -244,3 +260,16 @@ alias whatcomposer='curl composerversioncheatsheet.com/json.html'
 
 # Random aliases to open finder to a specific folder
 alias podcast='open /Users/travis/Dropbox/Member\ Up/MemberScore/Podcast'
+
+# Open current directory in visual studio code
+alias vs='open -a Visual\ Studio\ Code ./'
+
+# Let's speed up composer commands
+alias comp='composer'
+
+# Docker
+alias dc='docker-compose'
+ # ngrok
+alias ngrok='/Applications/ngrok'
+
+alias theresnoplacelikehome="cd #"
