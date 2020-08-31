@@ -66,29 +66,15 @@ fi
 
 export CLICOLOR_FORCE=1
 
-# lsd https://github.com/Peltoche/lsd
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
-
-# List all files colorized in long format
-alias l="ls -lF ${colorflag}"
-
-# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
-# # alias ls='ls -AFh ${colorflag} --group-directories-first'
-
-# List all files colorized in long format, including dot files
-alias la="ls -la ${colorflag}"
-
-# `cat` with beautiful colors. requires Pygments installed.
-# sudo easy_install -U Pygments
-alias c='pygmentize -O style=monokai -f console256 -g'
+unalias la
+# exa instead of lsd
+# https://the.exa.website/
+alias ls='exa --icons'
+alias la='exa --long --git --all --icons'
+alias lt='exa --tree'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
 
 # Copy my public key to the pasteboard
@@ -142,6 +128,7 @@ alias gchp='git cherry-pick' # cherry pick the committed code in your own branch
 alias gcln='git clean -xfd' # remove untracked files
 alias gup='git pull --rebase=merges'
 alias gbd='git branch -D'
+alias guncommit='git reset "HEAD^"'
 
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"

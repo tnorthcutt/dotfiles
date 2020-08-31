@@ -24,10 +24,10 @@ dirs_to_prepend=(
   "$HOME/dotfiles/bin"
   "$HOME/.composer/vendor/bin"
   "$HOME/bin"
-  "$HOME/bin/spark-installer"
   "$HOME/.yarn/bin"
   "/usr/local/opt/coreutils/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$GOPATH/bin"
+  "/Applications/Postgres.app/Contents/Versions/latest/bin"
 )
 
 # Explicitly configured $PATH
@@ -85,6 +85,8 @@ plugins=(fabric brew brew-cask catimg node npm history git-flow ssh-agent vagran
 
 # User configuration
 
+source $ZSH/oh-my-zsh.sh
+
 # Load the shell dotfiles
 for file in $HOME/.{shell_exports,shell_aliases,shell_functions,shell_config}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -103,7 +105,6 @@ fi
 # }
 # chpwd_functions=( auto-ls $chpwd_functions )
 
-source $ZSH/oh-my-zsh.sh
 
 # Source local extra (private) settings specific to machine if it exists
 [ -f ~/.zsh.local ] && source ~/.zsh.local
