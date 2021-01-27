@@ -25,6 +25,7 @@ cask 'db-browser-for-sqlite'
 cask 'mosaic'
 cask 'logitech-camera-settings'
 cask 'install font-hack-nerd-font'
+cask '1password-cli'
 
 brew 'mas'
 brew 'zsh'
