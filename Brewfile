@@ -27,6 +27,9 @@ cask 'logitech-camera-settings'
 cask 'install font-hack-nerd-font'
 cask '1password-cli'
 
+tap 'federico-terzi/espanso'
+brew 'espanso'
+
 brew 'mas'
 brew 'zsh'
 brew 'git'
