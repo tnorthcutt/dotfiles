@@ -11,6 +11,9 @@ matches:
   - trigger: ":espanso"
     replace: "Hi there!"
 
+  - trigger: ";tmail"
+    replace: "travis@travisnorthcutt.com"
+
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
