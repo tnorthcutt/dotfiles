@@ -104,6 +104,14 @@ prompt_dir() {
   prompt_segment blue black '%~'
 }
 
+prompt_git_wip() {
+  wip=$(git log -1 --pretty=%B)
+  if [[ $wip = "wip" || $wip = "WIP" ]]; then
+    prompt_segment red black
+  echo -n "<wip>"
+  fi
+}
+
 # Status:
 # - was there an error
 # - am I root
@@ -128,6 +136,7 @@ build_prompt() {
   prompt_status
   prompt_git
   prompt_dir
+  prompt_git_wip
   prompt_end
 }
 
