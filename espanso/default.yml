@@ -13,6 +13,8 @@ matches:
 
   - trigger: ";tmail"
     replace: "travis@travisnorthcutt.com"
+  - trigger: ";mail"
+    replace: "travis.northcutt@apiabroad.com"
 
   # Dates
   - trigger: ":date"
