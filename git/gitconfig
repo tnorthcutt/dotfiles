@@ -253,7 +253,7 @@
         # Make `git push` automatically push relevant
         # annotated tags when pushing branches out
         followTags = true
-	default = simple
+	default = current
 
 # Use separate file for username / github token / etc
 [include]
