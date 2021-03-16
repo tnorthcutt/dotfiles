@@ -82,6 +82,11 @@ prompt_git() {
 			prompt_segment red black
 			echo -n "<stash>"
 		fi
+    wip=$(git log -1 --pretty=%B)
+    if [[ $wip = "wip" || $wip = "WIP" ]]; then
+      prompt_segment red black
+      echo -n "<wip>"
+    fi
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
@@ -102,14 +107,6 @@ function prompt_online() {
 # Dir: current working directory
 prompt_dir() {
   prompt_segment blue black '%~'
-}
-
-prompt_git_wip() {
-  wip=$(git log -1 --pretty=%B)
-  if [[ $wip = "wip" || $wip = "WIP" ]]; then
-    prompt_segment red black
-  echo -n "<wip>"
-  fi
 }
 
 # Status:
@@ -136,7 +133,6 @@ build_prompt() {
   prompt_status
   prompt_git
   prompt_dir
-  prompt_git_wip
   prompt_end
 }
 
