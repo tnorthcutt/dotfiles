@@ -92,7 +92,7 @@ alias flushdns="dscacheutil -flushcache"
 alias gss="git status -s"
 alias gp="git push origin HEAD"
 alias gpt="git push origin HEAD && git push --tags"
-alias wip="git add . && git commit -m'WIP'"
+alias wip="git add -A && git commit -m'WIP'"
 alias grok="ngrok start rem.jsbin-dev.com static.rem.jsbin-dev.com learn.rem.jsbin-dev.com"
 alias gl='git log'
 alias glg='git log --stat'
@@ -261,3 +261,13 @@ alias dc='docker-compose'
 alias ngrok='/Applications/ngrok'
 
 alias theresnoplacelikehome="cd #"
+
+# Use homebrew ctags
+alias ctags='/usr/local/bin/ctags'
+
+# Alias ssh for kitty terminal usage
+# https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
+alias ssh="kitty +kitten ssh"
+
+# quickly check ssh aliases
+alias sshlist="cat ~/.ssh/config"

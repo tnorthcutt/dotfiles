@@ -28,6 +28,8 @@ dirs_to_prepend=(
   "/usr/local/opt/coreutils/libexec/gnubin" # Add brew-installed GNU core utilities bin
   "$GOPATH/bin"
   "/Applications/Postgres.app/Contents/Versions/latest/bin"
+  "$HOME/.local/bin"
+  "/usr/local/opt/mysql-client/bin"
 )
 
 # Explicitly configured $PATH
@@ -155,3 +157,13 @@ eval "$(nostromo completion)"
 # nostromo [section end]
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# https://github.com/cantino/mcfly
+eval "$(mcfly init zsh)"
+export MCFLY_KEY_SCHEME=vim
+
+source /Users/travis/.config/broot/launcher/bash/br

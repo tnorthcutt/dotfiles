@@ -7,3 +7,5 @@ export NVM_DIR="$HOME/.nvm"
 # nostromo [section begin]
 eval "$(nostromo completion)"
 # nostromo [section end]
+
+source /Users/travis/.config/broot/launcher/bash/br
