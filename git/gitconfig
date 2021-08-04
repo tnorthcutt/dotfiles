@@ -200,12 +200,17 @@
         autocrlf = input
         mergeoptions = --no-edit
         ignorecase = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+[delta]
+	line-numbers = true
+	plus-style = "syntax #012800"
+   	minus-style = "syntax #340001"
+    	syntax-theme = Monokai Extended
+    	navigate = true
+	side-by-side = true
 
-[pager]
-        # Insanely beautiful diffs ==> npm install -g diff-so-fancy
-        diff = diff-so-fancy | less --tabs=4 -RFX
-        show = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+    	diffFilter = delta --color-only
 
 [diff "bin"]
         # Use `hexdump` to diff binary files
@@ -259,16 +264,11 @@
 [include]
         path = ~/.gitconfig.local
 
-[filter "lfs"]
-        clean = git lfs clean %f
-        smudge = git lfs smudge %f
-        required = true
-	process = git-lfs filter-process
-
 [fetch]
         prune = true
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [gui]
 	recentrepo = /Users/travis/Sites/groups/wp-content/plugins/wc-group-memberships
 	recentrepo = /Users/travis/Sites/chi
@@ -279,3 +279,8 @@
 [user]
 	name = Travis Northcutt
 	email = travis@travisnorthcutt.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
