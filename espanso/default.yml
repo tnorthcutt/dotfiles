@@ -15,6 +15,10 @@ matches:
     replace: "travis@travisnorthcutt.com"
   - trigger: ";mail"
     replace: "travis.northcutt@apiabroad.com"
+  - trigger: ";tcom"
+    replace: "travisnorthcutt.com"
+  - trigger: ";todo"
+    replace: "- [ ]"
 
   # Dates
   - trigger: ":date"
