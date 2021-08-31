@@ -248,3 +248,22 @@ function docker-shell() {
   NAME=`awk '/php/{flag=1} flag && /name:/{print $NF;flag=""}' docker-compose.yaml`
   docker exec -it "$NAME" /bin/bash
 }
+
+function focus() {
+  nohup ssh -T personal 'bash -s' < /Users/travis/dotfiles/shell/focus-on.sh &
+  echo "###############################"
+  echo "#                             #"
+  echo "#     FOCUS MODE ENGAGED.     #"
+  echo "#                             #"
+  echo "###############################"
+}
+
+function relax() {
+  nohup nohup ssh -T personal 'bash -s' < /Users/travis/dotfiles/shell/focus-off.sh &
+  echo "###############################"
+  echo "#                             #"
+  echo "#     RELAX MODE ENGAGED.     #"
+  echo "#                             #"
+  echo "###############################"
+}
+
