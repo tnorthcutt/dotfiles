@@ -244,7 +244,7 @@ alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NV
 # alias cat to bat because bat is more better
 alias cat='bat'
 
-alias whatcomposer='curl composerversioncheatsheet.com/json.html'
+alias whatcomposer='curl composer.travisnorthcutt.com/json.html'
 
 # Random aliases to open finder to a specific folder
 alias podcast='open /Users/travis/Dropbox/Member\ Up/MemberScore/Podcast'
