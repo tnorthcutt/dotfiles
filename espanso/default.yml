@@ -20,6 +20,10 @@ matches:
   - trigger: ";todo"
     replace: "- [ ]"
 
+  # Coding
+  - trigger: ";cl"
+    replace: "console.log("
+
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
