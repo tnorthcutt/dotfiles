@@ -271,3 +271,23 @@ function duckypad() {
   sudo sh /Applications/duckypad/run.sh
 }
 
+# https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load.html
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+# https://github.com/freekmurze/dotfiles/blob/d86411f6a21454a5902d9cba4eddbacaaa173741/shell/.functions#L95-L105
+function db {
+    if [ "$1" = "refresh" ]; then
+        mysql -uroot -e "drop database $2; create database $2"
+    elif [ "$1" = "create" ]; then
+        mysql -uroot -e "create database $2"
+    elif [ "$1" = "drop" ]; then
+        mysql -uroot -e "drop database $2"
+    elif [ "$1" = "list" ]; then
+        mysql -uroot -e "show databases" | perl -p -e's/\|| *//g'
+    elif [ -z "$1" ] || [ "$1" = "-h" ] || [ $1 = "--help" ]; then
+        echo "Usage: refresh {name}, create {name}, drop {name}, or list (to show all dbs)"
+    fi
+}
