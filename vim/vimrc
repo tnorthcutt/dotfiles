@@ -75,3 +75,9 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+
+" Saved macros!
+let @z = 'vwwhdAa pj0'
+let @x = 'iphp artisan employee:create --email=wwwwwwwwi--password= €kb(PASS€kb€kb€kb€kb€kbPASSWORD €kb --name=wwi--last-name=j0'
+let @c = 'vf=x€ýaf-vf=xwhd$j0'

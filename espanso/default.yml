@@ -18,7 +18,13 @@ matches:
   - trigger: ";tcom"
     replace: "travisnorthcutt.com"
   - trigger: ";todo"
-    replace: "- [ ]"
+    replace: "- [ ] #task"
+
+  - trigger: ";task"
+    replace: "- [ ] #task"
+
+  - trigger: ";cmd"
+    replace: "⌘"
 
   # Coding
   - trigger: ";cl"
@@ -41,3 +47,15 @@ matches:
         type: shell
         params:
           cmd: "echo Hello from your shell"
+
+  # Work emails
+  - trigger: ";scarlett"
+    replace: "soropeza@artedigital-mx.com"
+  - trigger: ";josue"
+    replace: "lperez@artedigital-mx.com"
+  - trigger: ";yobhani"
+    replace: "amartinez@artedigital-mx.com"
+  - trigger: ";leo"
+    replace: "mpereira@daitan.com"
+  - trigger: ";lucas"
+    replace: "lucas.vale@encora.com"

@@ -250,7 +250,7 @@ function docker-shell() {
 }
 
 function focus() {
-  nohup ssh -T personal 'bash -s' < /Users/travis/dotfiles/shell/focus-on.sh &
+  nohup ssh -T personal 'bash -s' < /Users/travis/dotfiles/shell/focus-on.sh >/dev/null 2>&1 &
   echo "###############################"
   echo "#                             #"
   echo "#     FOCUS MODE ENGAGED.     #"
@@ -259,7 +259,7 @@ function focus() {
 }
 
 function relax() {
-  nohup nohup ssh -T personal 'bash -s' < /Users/travis/dotfiles/shell/focus-off.sh &
+  nohup ssh -T personal 'bash -s' < /Users/travis/dotfiles/shell/focus-off.sh >/dev/null 2>&1 &
   echo "###############################"
   echo "#                             #"
   echo "#     RELAX MODE ENGAGED.     #"
