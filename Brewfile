@@ -28,6 +28,9 @@ brew 'espanso'
 tap 'cantino/mcfly'
 brew 'mcfly'
 
+tap 'jesseduffield/lazygit'
+brew 'lazygit'
+
 brew 'mas'
 brew 'zsh'
 brew 'git'
@@ -70,6 +73,8 @@ brew 'pyenv'
 brew 'tldr'
 brew 'git-delta'
 brew 'broot'
+brew 'duf'
+brew 'dust'
 
 mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
 mas '1Password 7 - Password Manager', id: 1333542190
