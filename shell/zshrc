@@ -1,5 +1,8 @@
-# Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+# Make aliases available to vim
+# https://stackoverflow.com/questions/8841116/vim-not-recognizing-aliases-when-in-interactive-mode
+# https://stackoverflow.com/questions/23258413/expand-aliases-in-non-interactive-shells
+setopt aliases
+
 # https://stevenvanbael.com/profiling-zsh-startup
 zmodload zsh/zprof
 
@@ -18,6 +21,7 @@ export GOPATH
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
+  "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/local/go/bin"
   "/usr/bin"
@@ -202,6 +206,39 @@ export MCFLY_KEY_SCHEME=vim
 source /Users/travis/.config/broot/launcher/bash/br
 
 eval $(thefuck --alias)
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: gt completion >> ~/.zshrc
+#    or gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###
 
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/travis/bin/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/travis/bin/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/travis/bin/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/travis/bin/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

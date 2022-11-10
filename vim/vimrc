@@ -56,6 +56,9 @@ nnoremap <leader><space> :noh<cr>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Format JSON files with jq
+nmap <leader>jq :%!jq .<CR>
+
 " Show a colored column
 " set colorcolumn=85
 
@@ -81,3 +84,7 @@ set expandtab
 let @z = 'vwwhdAa pj0'
 let @x = 'iphp artisan employee:create --email=wwwwwwwwi--password= €kb(PASS€kb€kb€kb€kb€kbPASSWORD €kb --name=wwi--last-name=j0'
 let @c = 'vf=x€ýaf-vf=xwhd$j0'
+
+" Make aliases work in vim
+" https://stackoverflow.com/questions/8841116/vim-not-recognizing-aliases-when-in-interactive-mode
+let $BASH_ENV = "~/dotfiles/shell/shell_aliases"

@@ -31,6 +31,9 @@ brew 'mcfly'
 tap 'jesseduffield/lazygit'
 brew 'lazygit'
 
+tap 'withgraphite/tap'
+brew 'graphite'
+
 brew 'mas'
 brew 'zsh'
 brew 'git'
@@ -75,6 +78,9 @@ brew 'git-delta'
 brew 'broot'
 brew 'duf'
 brew 'dust'
+brew 'prettyping'
+brew 'fx'
+brew 'navi'
 
 mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
 mas '1Password 7 - Password Manager', id: 1333542190

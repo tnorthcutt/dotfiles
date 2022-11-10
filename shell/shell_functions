@@ -127,6 +127,14 @@ camerausedby () {
   echo -e "Recent camera uses:\n$usedby"
 }
 
+f1download() {
+    if [[ -n "$1" ]]; then
+    if [[ -n "$2" ]]; then
+        ffmpeg -i "$1" -c copy -bsf:a aac_adtstoasc "$2".mp4
+    fi
+    fi
+}
+
 
 # animated gifs from any video
 # from Alex Sexton gist.github.com/SlexAxton/4989674

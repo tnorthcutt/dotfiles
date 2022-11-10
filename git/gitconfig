@@ -191,6 +191,7 @@
 # Git mergetool
 [merge]
 	tool = opendiff
+    conflictstyle = diff3
 
 [core]
         editor = vim
@@ -208,6 +209,8 @@
     	syntax-theme = Monokai Extended
     	navigate = true
 	side-by-side = true
+    navigate = true
+    light = false
 
 [interactive]
     	diffFilter = delta --color-only
@@ -215,6 +218,7 @@
 [diff "bin"]
         # Use `hexdump` to diff binary files
         textconv = hexdump -v -C
+        colorMoved = default
 
 [pretty]
         custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"

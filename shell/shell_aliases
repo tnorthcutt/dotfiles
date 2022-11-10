@@ -130,6 +130,7 @@ alias gup='git pull --rebase=merges'
 alias gbd='git branch -D'
 alias guncommit='git reset "HEAD^"'
 alias gfa='git fetch --all'
+alias gpco='gh pr checkout' # with GH cli, checks out a PR
 
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
@@ -267,7 +268,7 @@ alias ctags='/usr/local/bin/ctags'
 
 # Alias ssh for kitty terminal usage
 # https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 
 # quickly check ssh aliases
 alias sshlist="cat ~/.ssh/config"
@@ -277,3 +278,11 @@ alias ecs="~/bin/ecs_task.sh"
 
 # laravel sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+alias random="LC_ALL=C tr -dc 'a-z0-9!@#$%^&*()' < /dev/urandom | head -c 18"
+
+# IINA
+alias iina='open -a IINA'
+
+# ssh tunnel for connect production database
+alias sshconnectdb='ssh -i ~/.ssh/id_rsa -f -N -L 3333:production-mysql8.cwriblnyqypt.us-east-2.rds.amazonaws.com:3306 ec2-user@3.12.150.57 -v'
