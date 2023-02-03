@@ -1,5 +1,8 @@
 # A good list of alises http://haacked.com/archive/2014/07/28/github-flow-aliases/
 [alias]
+        # Bisect
+        biscuit = bisect
+
         # Staging
         a = add
         aa = add --all

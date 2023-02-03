@@ -286,3 +286,6 @@ alias iina='open -a IINA'
 
 # ssh tunnel for connect production database
 alias sshconnectdb='ssh -i ~/.ssh/id_rsa -f -N -L 3333:production-mysql8.cwriblnyqypt.us-east-2.rds.amazonaws.com:3306 ec2-user@3.12.150.57 -v'
+
+# use python3
+alias python='python3'

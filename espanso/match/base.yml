@@ -7,7 +7,7 @@ matches:
   - trigger: ;tmail
     replace: travis@travisnorthcutt.com
   - trigger: ;mail
-    replace: travis.northcutt@apiabroad.com
+    replace: travis.northcutt@apiexperience.com
   - trigger: ;tcom
     replace: travisnorthcutt.com
   - trigger: ;todo
