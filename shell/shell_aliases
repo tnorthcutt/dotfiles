@@ -231,7 +231,7 @@ alias plugin='wp plugin install --activate'
 alias licenses='cat ~/Dropbox/Member\ Up/WordPress/plugins/licenses.txt'
 
 # https://gist.github.com/thebouv/8657674
-alias ducks='du -cks * | sort -rn | head -11'
+alias ducks='du -sh * | sort -hr | head'
 
 # screenshot, OCR, and copy text
 alias ocr='screencapture -i ~/tmp/screenshot.png && tesseract ~/tmp/screenshot.png stdout | pbcopy && rm -f ~/tmp/screenshot.png'

@@ -162,6 +162,7 @@
   }; f"
 	forget = update-index --skip-worktree
 	remember = update-index --no-skip-worktree
+	upstream = !git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD)
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

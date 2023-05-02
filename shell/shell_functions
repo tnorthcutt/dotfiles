@@ -299,3 +299,15 @@ function db {
         echo "Usage: refresh {name}, create {name}, drop {name}, or list (to show all dbs)"
     fi
 }
+
+# Open manpages in vim
+function vman() {
+    man $1 | col -b | vim -MR -
+}
+
+function swap() {
+    tmp=`mktemp`
+    mv $1 $tmp
+    mv $2 $1
+    mv $tmp $2
+}

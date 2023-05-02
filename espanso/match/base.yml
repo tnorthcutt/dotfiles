@@ -11,14 +11,14 @@ matches:
   - trigger: ;tcom
     replace: travisnorthcutt.com
   - trigger: ;todo
-    replace: "- [ ] #task"
+    replace: "- [ ] "
   - trigger: ;task
     replace: "- [ ] #task"
   - trigger: ;cmd
     replace: ⌘
   - trigger: ;cl
     replace: console.log(
-  - trigger: ":date"
+  - trigger: ;date
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -50,3 +50,5 @@ matches:
     replace: ¹
   - trigger: ;foot2
     replace: ²
+  - trigger: ;shrug
+    replace: ¯\_(ツ)_/¯
