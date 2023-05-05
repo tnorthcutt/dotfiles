@@ -30,6 +30,7 @@ dirs_to_prepend=(
   "/sw/bin/"
   "$HOME/dotfiles/bin"
   "$HOME/code/apiabroad-utils"
+  "$HOME/code/scripts"
   "$HOME/.composer/vendor/bin"
   "$HOME/bin"
   "$HOME/.yarn/bin"
