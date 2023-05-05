@@ -29,6 +29,7 @@ dirs_to_prepend=(
   "/usr/local/Cellar/mysql@5.7/5.7.25/bin/"
   "/sw/bin/"
   "$HOME/dotfiles/bin"
+  "$HOME/code/apiabroad-utils"
   "$HOME/.composer/vendor/bin"
   "$HOME/bin"
   "$HOME/.yarn/bin"
