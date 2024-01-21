@@ -88,14 +88,14 @@
         # Misc
         publish = "!git push --set-upstream origin $(git branch-name)"
 
-	# https://metalelf0.github.io/git/2014/07/12/git-preview-conflicts-without-touching-the-working-copy.html
-	# check how the merge of dev into master will go:
-	# git dry dev master
-	dry = "!f() { git merge-tree `git merge-base $2 $1` $2 $1; }; f"
+        # https://metalelf0.github.io/git/2014/07/12/git-preview-conflicts-without-touching-the-working-copy.html
+        # check how the merge of dev into master will go:
+        # git dry dev master
+        dry = "!f() { git merge-tree `git merge-base $2 $1` $2 $1; }; f"
 
-	# see if there will be any conflicts merging dev into master:
-	# git conflicts dev master
-	conflicts = "!f() { git merge-tree `git merge-base $2 $1` $2 $1 | grep -A3 'changed in both'; }; f"
+        # see if there will be any conflicts merging dev into master:
+        # git conflicts dev master
+        conflicts = "!f() { git merge-tree `git merge-base $2 $1` $2 $1 | grep -A3 'changed in both'; }; f"
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -194,8 +194,8 @@
 
 # Git mergetool
 [merge]
-	tool = opendiff
-    conflictstyle = diff3
+        tool = opendiff
+        conflictstyle = diff3
 
 [core]
         editor = vim
@@ -205,16 +205,16 @@
         autocrlf = input
         mergeoptions = --no-edit
         ignorecase = false
-	pager = delta
+        pager = delta
 [delta]
-	line-numbers = true
-	plus-style = "syntax #012800"
-   	minus-style = "syntax #340001"
+        line-numbers = true
+        plus-style = "syntax #012800"
+        minus-style = "syntax #340001"
     	syntax-theme = Monokai Extended
     	navigate = true
-	side-by-side = true
-    navigate = true
-    light = false
+        side-by-side = true
+        navigate = true
+        light = false
 
 [interactive]
     	diffFilter = delta --color-only
@@ -266,7 +266,7 @@
         # Make `git push` automatically push relevant
         # annotated tags when pushing branches out
         followTags = true
-	default = current
+        default = current
 
 # Use separate file for username / github token / etc
 [include]
@@ -275,20 +275,22 @@
 [fetch]
         prune = true
 [init]
-	templatedir = ~/.git_template
-	defaultBranch = main
+        templatedir = ~/.git_template
+        defaultBranch = main
 [gui]
-	recentrepo = /Users/travis/Sites/groups/wp-content/plugins/wc-group-memberships
-	recentrepo = /Users/travis/Sites/chi
+        recentrepo = /Users/travis/Sites/groups/wp-content/plugins/wc-group-memberships
+        recentrepo = /Users/travis/Sites/chi
 [github]
-	user = tnorthcutt
+        user = tnorthcutt
 [ghi]
-	token = !security find-internet-password -a tnorthcutt -s github.com -l 'ghi token' -w
+        token = !security find-internet-password -a tnorthcutt -s github.com -l 'ghi token' -w
 [user]
-	name = Travis Northcutt
-	email = travis@travisnorthcutt.com
+        name = Travis Northcutt
+        email = travis@travisnorthcutt.com
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[rerere]
+	enabled = true

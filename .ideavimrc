@@ -1,5 +1,5 @@
 set surround
-set relativenumber number
+set number
 
 " AceJump https://github.com/acejump/AceJump#configuring
 " Press `f` to activate AceJump

@@ -37,18 +37,20 @@ matches:
   - trigger: ;josue
     replace: lperez@artedigital-mx.com
   - trigger: ;yobhani
-    replace: yobhani.martinez@apiabroad.com
+    replace: yobhani.martinez@apiexperience.com
   - trigger: ;leo
     replace: maria.pereira@encora.com
   - trigger: ;lucas
     replace: lucas.vale@encora.com
-  - trigger: ;mike
-    replace: mike.hachey@apiabroad.com
-  - trigger: ;dalton
-    replace: dalton.smith@apiabroad.com
+  - trigger: ;marcelo
+    replace: mrecio@artedigital-mx.com
   - trigger: ;foot1
     replace: ¹
   - trigger: ;foot2
     replace: ²
   - trigger: ;shrug
     replace: ¯\_(ツ)_/¯
+  - regex: ";tm\\s"
+    replace: ™
+  - trigger: ;prdep
+    replace: Please add a link to any dependencies in the PR description, thanks

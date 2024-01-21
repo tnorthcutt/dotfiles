@@ -222,9 +222,12 @@ grh(){
   fi
 }
 
+
 gb(){
   if [ $# -eq 0 ]; then
-    git branch | fzf --print0 -m | tr -d '[:space:]*' |xargs -0 -t -o git checkout
+    git branch | fzf --print0 -m | tr -d '[:space:]*' | xargs -0 -t -o git checkout
+  elif [ "$1" = "--recent" ] || [ "$1" = "-r" ]; then
+    git reflog | grep -o "checkout: moving from .* to " | sed -e 's/checkout: moving from //' -e 's/ to $//' | awk '!seen[$0]++' | head -20 | fzf --print0 -m | tr -d '[:space:]*' | xargs -0 -t -o git checkout
   else
     git checkout "$@"
   fi

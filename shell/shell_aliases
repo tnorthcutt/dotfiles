@@ -92,7 +92,7 @@ alias flushdns="dscacheutil -flushcache"
 alias gss="git status -s"
 alias gp="git push origin HEAD"
 alias gpt="git push origin HEAD && git push --tags"
-alias wip="git add -A && git commit -m'WIP'"
+alias wip="git add -A && git commit -m'WIP' --no-verify"
 alias grok="ngrok start rem.jsbin-dev.com static.rem.jsbin-dev.com learn.rem.jsbin-dev.com"
 alias gl='git log'
 alias glg='git log --stat'
@@ -131,6 +131,7 @@ alias gbd='git branch -D'
 alias guncommit='git reset "HEAD^"'
 alias gfa='git fetch --all'
 alias gpco='gh pr checkout' # with GH cli, checks out a PR
+alias gw='git worktree'
 
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
@@ -289,3 +290,6 @@ alias sshconnectdb='ssh -i ~/.ssh/id_rsa -f -N -L 3333:production-mysql8.cwribln
 
 # use python3
 alias python='python3'
+
+# lazydocker
+alias lzd='lazydocker'
