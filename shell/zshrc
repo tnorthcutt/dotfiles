@@ -107,9 +107,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-plugins=(zsh-nvm fabric brew brew-cask catimg node npm history git-flow ssh-agent vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr z asdf git-trim)
+plugins=(fabric brew brew-cask catimg node npm history git-flow ssh-agent vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr z asdf git-trim)
 
 # User configuration
 
@@ -171,11 +169,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # Set cdpath; from https://twitter.com/paulredmond/status/1204557648026144768
 cdpath=(~/sites ~/homestead-sites/segmetrics)
 
-## commenting this stuff out for now to try out the zsh-nvm plugin and get lazy loading
-# NVM
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 # https://github.com/ohmyzsh/ohmyzsh/issues/2283#issuecomment-45452691
  unalias mysql
 
@@ -206,15 +199,12 @@ done
 unsetopt EXTENDEDGLOB
 compinit -C
 
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
 # https://github.com/cantino/mcfly
 eval "$(mcfly init zsh)"
 export MCFLY_KEY_SCHEME=vim
 
 source /Users/travis/.config/broot/launcher/bash/br
 
-eval $(thefuck --alias)
 #compdef gt
 ###-begin-gt-completions-###
 #
@@ -252,3 +242,7 @@ export BAT_THEME="ansi"
 
 unsetopt XTRACE
 exec 2>&3 3>&-
+
+# fnm
+export PATH="/Users/travis/Library/Application Support/fnm:$PATH"
+eval "`fnm env`"
