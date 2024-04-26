@@ -284,8 +284,7 @@ function duckypad() {
 
 # https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load.html
 timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+  for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 }
 
 # https://github.com/freekmurze/dotfiles/blob/d86411f6a21454a5902d9cba4eddbacaaa173741/shell/.functions#L95-L105

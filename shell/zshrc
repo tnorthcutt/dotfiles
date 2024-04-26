@@ -1,13 +1,14 @@
+#uncomment to do profiling
 # for profiling https://esham.io/2018/02/zsh-profiling
-zmodload zsh/datetime
-setopt PROMPT_SUBST
-PS4='+$EPOCHREALTIME %N:%i> '
+#zmodload zsh/datetime
+#setopt PROMPT_SUBST
+#PS4='+$EPOCHREALTIME %N:%i> '
 
-logfile=$(mktemp zsh_profile.XXXXXXXX)
-echo "Logging to $logfile"
-exec 3>&2 2>$logfile
-
-setopt XTRACE
+#logfile=$(mktemp zsh_profile.XXXXXXXX)
+#echo "Logging to $logfile"
+#exec 3>&2 2>$logfile
+#setopt XTRACE
+#uncomment to do profiling
 
 # Make aliases available to vim
 # https://stackoverflow.com/questions/8841116/vim-not-recognizing-aliases-when-in-interactive-mode
@@ -29,6 +30,7 @@ export GOPATH
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
+  "/opt/homebrew/opt/mysql-client/bin"
   "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/local/go/bin"
@@ -107,7 +109,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric brew brew-cask catimg node npm history git-flow ssh-agent vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-iterm-touchbar git-open tldr z asdf git-trim)
+plugins=(brew catimg node npm history ssh-agent vi-mode zsh-autosuggestions zsh-syntax-highlighting z asdf git-trim)
 
 # User configuration
 
@@ -157,9 +159,6 @@ function pet-select() {
 zle -N pet-select
 bindkey '^s' pet-select
 
-# Load rbenv
-eval "$(rbenv init -)"
-
 # load zmv shell cmd
 autoload zmv
 export PATH="/usr/local/bin:$PATH"
@@ -168,14 +167,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Set cdpath; from https://twitter.com/paulredmond/status/1204557648026144768
 cdpath=(~/sites ~/homestead-sites/segmetrics)
-
-# https://github.com/ohmyzsh/ohmyzsh/issues/2283#issuecomment-45452691
- unalias mysql
-
-# nostromo [section begin]
-eval "$(nostromo completion)"
-# nostromo [section end]
-
 
 # Commenting out for now to see if this is extraneous
 # autoload -U +X bashcompinit && bashcompinit
@@ -198,10 +189,6 @@ for dump in $ZSH_COMPDUMP(#qN.m1); do
 done
 unsetopt EXTENDEDGLOB
 compinit -C
-
-# https://github.com/cantino/mcfly
-eval "$(mcfly init zsh)"
-export MCFLY_KEY_SCHEME=vim
 
 source /Users/travis/.config/broot/launcher/bash/br
 
@@ -228,9 +215,11 @@ compdef _gt_yargs_completions gt
 # 1Password CLI stuff
 OP_BIOMETRIC_UNLOCK_ENABLED=true
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# disable pyenv stuff for now to speed up shell
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
 eval "$(atuin init zsh)"
 
 # For mods cli tool https://github.com/charmbracelet/mods/tree/23724d3d65933ad5af553f5e5567c6763d1b77eb#openai
@@ -240,9 +229,16 @@ export OPENAI_API_KEY=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
 export BAT_THEME="ansi"
 
 
-unsetopt XTRACE
-exec 2>&3 3>&-
-
 # fnm
 export PATH="/Users/travis/Library/Application Support/fnm:$PATH"
-eval "`fnm env`"
+eval "`fnm env --use-on-cd`"
+
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#uncomment to do profiling
+#unsetopt XTRACE
+#exec 2>&3 3>&-
+#uncomment to do profiling
+#
+

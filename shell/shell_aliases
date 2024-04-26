@@ -69,9 +69,9 @@ export CLICOLOR_FORCE=1
 unalias la
 # exa instead of lsd
 # https://the.exa.website/
-alias ls='exa --icons'
-alias la='exa --long --git --all --icons'
-alias lt='exa --tree'
+alias ls='eza --icons'
+alias la='eza --long --git --all --icons'
+alias lt='eza --tree'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -162,7 +162,7 @@ function git_list_branches() {
 
 # Networking. IP address, dig, DNS
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias dig="dig +nocmd any +multiline +noall +answer"
+alias dig="dig +multiline"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -W byline -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
@@ -293,3 +293,9 @@ alias python='python3'
 
 # lazydocker
 alias lzd='lazydocker'
+
+# time curl output
+alias curltime='curl -w "@$HOME/dotfiles/.curl-format" -o /dev/null -s'
+
+# lotr-commit
+alias lotr-commit='$HOME/code/scripts/lord-of-the-commits/src/lotr-commit.zsh'
