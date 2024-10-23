@@ -2,7 +2,6 @@
 
 # https://github.com/kaicataldo/dotfiles/blob/master/bin/install.sh
 
-# This symlinks all the dotfiles (and .atom/) to ~/
 # It also symlinks ~/bin for easy updating
 
 # This is safe to run multiple times and will prompt you about anything unclear
@@ -161,13 +160,6 @@ echo "done"
 #
 
 
-# Atom editor settings
-echo -n "Copying Atom settings.."
-mv -f ~/.atom ~/dotfiles_old/
-ln -s $HOME/dotfiles/atom ~/.atom
-echo "done"
-
-
 declare -a FILES_TO_SYMLINK=(
 
   'shell/shell_aliases'
@@ -312,17 +304,6 @@ install_zsh () {
 
 main
 install_zsh
-
-###############################################################################
-# Atom                                                                        #
-###############################################################################
-
-# Copy over Atom configs
-#cp -r atom/packages.list $HOME/.atom
-
-# Install community packages
-#apm list --installed --bare - get a list of installed packages
-#apm install --packages-file $HOME/.atom/packages.list
 
 ###############################################################################
 # Zsh                                                                         #
