@@ -42,8 +42,6 @@ dirs_to_prepend=(
   "/usr/local/Cellar/mysql@5.7/5.7.25/bin/"
   "/sw/bin/"
   "$HOME/dotfiles/bin"
-  "$HOME/code/apiabroad-utils"
-  "$HOME/code/apiabroad-utils/bin"
   "$HOME/code/scripts"
   "$HOME/.composer/vendor/bin"
   "$HOME/bin"
@@ -56,6 +54,7 @@ dirs_to_prepend=(
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "$HOME/.cargo/bin"
+  "/Library/TeX/Root/bin/universal-darwin"
 )
 
 # Explicitly configured $PATH
@@ -242,3 +241,17 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #uncomment to do profiling
 #
 
+
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/travis/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/travis/Library/Application Support/Herd/config/php/83/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/travis/Library/Application Support/Herd/bin/":$PATH

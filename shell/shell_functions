@@ -233,6 +233,27 @@ gb(){
   fi
 }
 
+# For deleting a branch from a list
+gdelete(){
+    local branches
+    branches=$(git branch | sed 's/^[ *]*//' | fzf -m)
+
+    if [[ -z "$branches" ]]; then
+        echo "No branches selected."
+        return
+    fi
+
+    echo "$branches" | while read -r branch; do
+        confim="" # clear confirm variable
+        vared -p "Are you sure you want to delete branch \"$branch\"? (y/N) " -c confirm
+        if [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]]; then
+            git branch -D "$branch"
+        else
+            echo "Skipping deletion of branch \"$branch\""
+        fi
+    done
+}
+
 # https://laravel.com/docs/5.8/homestead#accessing-homestead-globally
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
@@ -312,4 +333,20 @@ function swap() {
     mv $1 $tmp
     mv $2 $1
     mv $tmp $2
+}
+
+# https://github.com/guywaldman/magic-cli
+function mcs {
+  model_prompt="$*"
+  magic-cli suggest "$model_prompt"
+}
+
+function mcf {
+  model_prompt="$*"
+  magic-cli search "$model_prompt"
+}
+
+function mca {
+  model_prompt="$*"
+  magic-cli ask "$model_prompt"
 }

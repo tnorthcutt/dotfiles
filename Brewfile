@@ -2,23 +2,9 @@
 
 cask_args appdir: '/Applications'
 
-cask 'google-chrome'
-cask 'iterm2'
-cask 'slack'
-cask 'flux'
-cask 'alfred'
-cask 'dropbox'
 cask 'macdown'
 cask 'imageoptim'
-cask 'spotify'
-cask 'caprine'
-cask 'firefox'
-cask 'tomighty'
-cask 'gitup'
 cask 'qlmarkdown'
-cask 'keepingyouawake'
-cask 'insomnia'
-cask 'mosaic'
 cask '1password-cli'
 cask 'kitty'
 
@@ -36,6 +22,9 @@ brew 'graphite'
 
 tap 'jesseduffield/lazydocker'
 brew 'lazydocker'
+
+tap 'caarlos0/tap'
+brew 'timer'
 
 brew 'mas'
 brew 'zsh'
@@ -63,7 +52,6 @@ brew 'imagesnap'
 brew 'sl'
 brew 'the_silver_searcher'
 brew 'autojump'
-brew 'yarn'
 brew 'eza'
 brew 'bat'
 brew 'prettyping'
@@ -85,9 +73,3 @@ brew 'prettyping'
 brew 'fx'
 brew 'navi'
 brew 'atuin'
-
-mas 'Fantastical 2 - Calendar and Reminders', id: 975937182
-mas '1Password 7 - Password Manager', id: 1333542190
-mas 'Shush - Microphone Manager', id: 496437906 
-mas 'Harvest', id: 506189836
-mas 'iA Writer', id: 775737590

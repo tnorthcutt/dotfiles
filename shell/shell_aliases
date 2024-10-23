@@ -299,3 +299,15 @@ alias curltime='curl -w "@$HOME/dotfiles/.curl-format" -o /dev/null -s'
 
 # lotr-commit
 alias lotr-commit='$HOME/code/scripts/lord-of-the-commits/src/lotr-commit.zsh'
+
+# https://gist.github.com/bashbunni/f6b04fc4703903a71ce9f70c58345106
+# Requires https://github.com/caarlos0/timer to be installed
+alias work="timer 25m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+
+alias rest="timer 5m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
